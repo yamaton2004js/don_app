@@ -1,0 +1,54 @@
+.main
+  .contents
+    .content-top
+      .content-top__mySchedule
+        自分のスケジュール
+        = link_to "追加する", new_todo_path, class: 'content-top__mySchedule--add'
+
+      .content-top__box
+        -current_user.todos.each do |todo|
+          - if todo.start_date_time > Time.now
+            .content-top__box__content
+              .content-top__box__content__schedule
+                .content-top__box__content__schedule__weekly
+                  =link_to todo.start_date_time.strftime("%d日 %H:%M〜"), edit_todo_path(todo.id)
+                .content-top__box__content__schedule__detail
+                  内容:
+                  = todo.content
+                .content-top__box__content__schedule__company
+                  .content-top__box__content__schedule__company--name
+                    企業:
+                    = todo.company
+                  .content-top__box__content__schedule__company--place
+                    場所:
+                    = todo.LOC
+
+    .content-bottom
+      .content-bottom__title
+        みんなの今日のスケジュール一覧
+      .content-bottom__box
+        .content-bottom__box__column
+          .content-bottom__box__column--name
+            名前
+          .content-bottom__box__column--time
+            時間
+          .content-bottom__box__column--detail
+            内容
+          .content-bottom__box__column--place
+            場所
+        .content-bottom__box__schedule
+          - @todos.each do |todo|
+            - if todo.start_date_time.today? && todo.user != current_user
+              .content-bottom__box__schedule__content
+                .content-bottom__box__schedule__content--userName
+                  = todo.user.name
+                .content-bottom__box__schedule__content--time
+                  = todo.start_date_time.strftime("%m-%d %H:%M")
+                .content-bottom__box__schedule__content--detail
+                  = todo.content
+                .content-bottom__box__schedule__content--companyPlace
+                  = todo.LOC
+
+
+
+

@@ -1,0 +1,17 @@
+.form
+  = form_with(model: todo, local: true) do |f|
+    .form__box
+      .form__box__startDateTime
+        日時:
+        = f.datetime_select :start_date_time, include_blank: true, selected: Time.now, minute_step: 10, class: 'form__box__startDateTime--default'
+      .form__box__content
+        内容:
+        = f.select :content, [ ["営業", "営業"], ["対応", "対応"], ["有給", "有給"], ["病欠", "病欠"], ["その他", "その他"] ], prompt: "選択してください。", class: 'form__box__content--select'
+      .form__box__company
+        企業名:
+        = f.text_field :company, class: 'form__box__company--textField'
+      .form__box__loc
+        場所:
+        = f.text_field :LOC, class: 'form__box__loc--textField'
+      .form__submit
+        = f.submit "追加する", class: 'form__submit--btn'

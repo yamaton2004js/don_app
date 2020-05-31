@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 200px;
+  background-color: lightblue;
+  &__right {
+    height: 60px;
+    width: 200px;
+    &__title {
+      line-height: 60px;
+      &--btn {
+        font-size: 20px;
+        text-decoration: none;
+        color: azure;
+      }
+    }
+  }
+  &__left {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    &__userName {
+      margin-right: 20px;
+      &--btn {
+        font-size: 16px;
+        text-decoration: none;
+        color: azure;
+      }
+    }
+    &__logOut {
+      margin-right: 10px;
+      &--btn {
+        font-size: 16px;
+        text-decoration: none;
+        color: azure;
+      }
+    }
+  }
+}
+
+.main {
+  height: calc(100vh - 60px);
+  width: 100%;
+  padding: 0 200px;
+  .contents {
+    height: 100%;
+    width: 100%;
+    padding: 35px 20px;
+    background-color: lightgoldenrodyellow;
+    .content-top {
+      height: 250px;
+      width: 100%;
+      padding: 10px 15px;
+      background-color: lightgray;
+      &__mySchedule {
+        height: 15%;
+        margin: 0 15px;
+        font-size: 20px;
+        &--add {
+          text-decoration: none;
+          float: right;
+          font-size: 16px;
+        }
+      }
+      &__box {
+        background-color: darkgray;
+        height: 85%;
+        width: 100%;
+        padding: 5px 0 5px 5px;
+        display: flex;
+        overflow: scroll;
+        &__content {
+          &__schedule {
+            height: 100%;
+            width: 150px;
+            margin-right: 5px;
+            background-color: white;
+            &__weekly {
+              width: 100%;
+              text-align: center;
+              height: 30%;
+            }
+            &__contents {
+
+            }
+          }
+        }
+      }
+    }
+    .content-bottom {
+      height: calc(100% - 285px);
+      width: 100%;
+      margin-top: 35px;
+      padding: 10px 15px;
+      background-color: lightgray;
+      &__title {
+        height: 15%;
+      }
+      &__box {
+        height: 85%;
+        width: 100%;
+        &__column {
+          display: flex;
+          justify-content: space-around;
+          font-weight: bold;
+          border: 2px solid black;
+          height: 40px;
+          padding: 5px 0;
+          margin-bottom: 5px;
+        }
+        &__schedule {
+          height: calc(100% - 40px);
+          width: 100%;
+          overflow: scroll;
+          &__content {
+            height: 25px;
+            width: 100%;
+            border: 1px solid black;
+            display: flex;
+            // justify-content: space-around;
+            margin: 5px 0;
+            &--userName {
+              width: 25%;
+              // border: 1px solid black;
+              text-align: center;
+            }
+            &--time {
+              width: 25%;
+              text-align: center;
+            }
+            &--detail {
+              width: 25%;
+              text-align: center;
+            }
+            &--companyPlace {
+              width: 25%;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+.form {
+  width: 100%;
+  height: calc(100vh - 60px);
+  padding: 50px 200px;
+  &__box {
+    text-align: center;
+  }
+}
+h3 {
+  text-align: center;
+  font-size: 30px;
+  margin: 15px 0;
+}
+

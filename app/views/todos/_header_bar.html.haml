@@ -1,0 +1,9 @@
+.header
+  .header__right
+    .header__right__title
+      = link_to "Work Schedule", root_path, class: 'header__right__title--btn'
+  .header__left
+    .header__left__userName
+      = link_to current_user.name, edit_user_path(current_user), class: 'header__left__userName--btn'
+    .header__left__logOut
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'header__left__logOut--btn'
